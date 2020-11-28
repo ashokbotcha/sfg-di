@@ -1,6 +1,7 @@
 package com.example.sfgdi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.example.sfgdi.services.GreetingService;
@@ -8,7 +9,8 @@ import com.example.sfgdi.services.GreetingService;
 @Controller
 public class PropertyInjectedController {
 	
-	
+	@Autowired
+	@Qualifier("propertyGreetingServiceImpl")
 	GreetingService greetingService;
 
 	public void testMethod() {
